@@ -20,3 +20,13 @@ class Countdown:
 
 for x in Countdown(5):
     print(x)
+
+def Phibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a)
+        a, b = b, b+a
+        print(a, b)
+
+for x in Phibonacci(5):
+    print(x)
