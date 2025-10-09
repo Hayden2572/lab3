@@ -1,3 +1,5 @@
+from decimal import Decimal, getcontext
+
 listComprehension = [x**2 for x in range(1, 11)]
 listComprehensionSort = [x for x in range(1, 21) if x % 2 == 0]
 ogList = ["python", "Java", "c++", "Rust", "go"]
@@ -30,3 +32,23 @@ def Phibonacci(n):
 
 for x in Phibonacci(5):
     print(x)
+
+getcontext().prec = 10
+
+def deposit_calculator():
+    initial_amount = Decimal(input("Введите начальную сумму вклада (рубли.копейки): "))
+    annual_rate = Decimal(input("Введите годовую процентную ставку (например, 7.5): "))
+    years = int(input("Введите срок вклада (в годах): "))
+
+    months = years * 12
+    monthly_rate = annual_rate / (12 * 100)
+    total_amount = initial_amount * (1 + monthly_rate) ** months
+
+    total_amount = total_amount.quantize(Decimal('0.01'))
+
+    profit = total_amount - initial_amount
+
+    print(f"Итоговая сумма вклада: {total_amount} руб.")
+    print(f"Общая прибыль: {profit} руб.")
+
+deposit_calculator()
