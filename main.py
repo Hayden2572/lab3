@@ -1,4 +1,5 @@
 from decimal import Decimal, getcontext
+from fractions import Fraction
 
 listComprehension = [x**2 for x in range(1, 11)]
 listComprehensionSort = [x for x in range(1, 21) if x % 2 == 0]
@@ -52,3 +53,16 @@ def deposit_calculator():
     print(f"Общая прибыль: {profit} руб.")
 
 deposit_calculator()
+
+frac1 = Fraction(3, 4)
+frac2 = Fraction(5, 6)
+
+addition = frac1 + frac2
+subtraction = frac1 - frac2
+multiplication = frac1 * frac2
+division = frac1 / frac2
+
+print(f"Сложение: {addition}")
+print(f"Вычитание: {subtraction}")
+print(f"Умножение: {multiplication}")
+print(f"Деление: {division}")
