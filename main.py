@@ -1,6 +1,6 @@
 from decimal import Decimal, getcontext
 from fractions import Fraction
-from datetime import datetime
+from datetime import datetime, date
 
 listComprehension = [x**2 for x in range(1, 11)]
 listComprehensionSort = [x for x in range(1, 21) if x % 2 == 0]
@@ -73,3 +73,18 @@ now = datetime.now()
 print(f"Текущая дата и время: {now}")
 print(f"Только текущая дата: {now.date()}")
 print(f"Только текущее время: {now.time()}")
+
+birthday_str = input("Введите вашу дату рождения (гггг-мм-дд): ")
+birthday = datetime.strptime(birthday_str, "%Y-%m-%d").date()
+
+today = date.today()
+
+days_passed = (today - birthday).days
+print(f"С момента рождения прошло дней: {days_passed}")
+
+next_birthday = birthday.replace(year=today.year)
+if next_birthday < today:
+    next_birthday = next_birthday.replace(year=today.year + 1)
+
+days_until_next_birthday = (next_birthday - today).days
+print(f"До следующего дня рождения осталось дней: {days_until_next_birthday}")
