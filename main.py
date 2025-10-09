@@ -28,7 +28,7 @@ for x in Countdown(5):
 def Phibonacci(n):
     a, b = 0, 1
     for _ in range(n):
-        print(a)
+        yield a
         a, b = b, b+a
         print(a, b)
 
