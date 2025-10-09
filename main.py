@@ -99,3 +99,5 @@ def format_datetime(dt):
 
 now = datetime.now()
 print(format_datetime(now))
+
+print("test")
