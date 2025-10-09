@@ -1,5 +1,6 @@
 from decimal import Decimal, getcontext
 from fractions import Fraction
+from datetime import datetime
 
 listComprehension = [x**2 for x in range(1, 11)]
 listComprehensionSort = [x for x in range(1, 21) if x % 2 == 0]
@@ -66,3 +67,9 @@ print(f"Сложение: {addition}")
 print(f"Вычитание: {subtraction}")
 print(f"Умножение: {multiplication}")
 print(f"Деление: {division}")
+
+now = datetime.now()
+
+print(f"Текущая дата и время: {now}")
+print(f"Только текущая дата: {now.date()}")
+print(f"Только текущее время: {now.time()}")
