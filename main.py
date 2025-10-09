@@ -88,3 +88,14 @@ if next_birthday < today:
 
 days_until_next_birthday = (next_birthday - today).days
 print(f"До следующего дня рождения осталось дней: {days_until_next_birthday}")
+
+def format_datetime(dt):
+    months = {
+        1: "января", 2: "февраля", 3: "марта", 4: "апреля",
+        5: "мая", 6: "июня", 7: "июля", 8: "августа",
+        9: "сентября", 10: "октября", 11: "ноября", 12: "декабря"
+    }
+    return f"Сегодня {dt.day} {months[dt.month]} {dt.year} года, время: {dt.strftime('%H:%M')}"
+
+now = datetime.now()
+print(format_datetime(now))
